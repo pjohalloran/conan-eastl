@@ -17,11 +17,13 @@ class EASTLConan(ConanFile):
     self.run("git checkout 3.05.00")
 
   def build(self):
-    os.makedirs("build")
-    os.chdir("build")
+    os.makedirs("EASTL/build")
+    os.chdir("EASTL/build")
+    print("*** CD = %s" % os.getcwd())
     self.run("cmake ..")
     self.run("cmake --build . --config %s" % self.options.build_type)
 
   def package(self):
-    self.copy("build/*.lib", dst="lib", keep_path=False)
-    self.copy("build/*.a", dst="lib", keep_path=False)
+    self.copy("*.h", src="EASTL/include", dst="include", keep_path=True)
+    self.copy("*.lib", dst="lib", keep_path=False)
+    self.copy("*.a", dst="lib", keep_path=False)
