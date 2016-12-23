@@ -15,7 +15,8 @@ class EASTLConan(ConanFile):
     os.chdir("EASTL")
     self.run("git checkout 3.05.00")
 
-  def build(self):os.makedirs("build")
+  def build(self):
+    os.makedirs("build")
     os.chdir("build")
     self.run("cmake ..")
     self.run("cmake --build . --config %s" % self.options.build_type)
