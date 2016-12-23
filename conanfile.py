@@ -1,4 +1,5 @@
 from conans import ConanFile, CMake
+import os
 
 class EASTLConan(ConanFile):
   name = "EASTL"
