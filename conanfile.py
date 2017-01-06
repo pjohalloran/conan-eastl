@@ -14,12 +14,11 @@ class EASTLConan(ConanFile):
   def source(self):
     self.run("git clone https://github.com/electronicarts/EASTL")
     os.chdir("EASTL")
-    self.run("git checkout 3.05.00")
+    self.run("git checkout %s" % self.version)
 
   def build(self):
     os.makedirs("EASTL/build")
     os.chdir("EASTL/build")
-    print("*** CD = %s" % os.getcwd())
     self.run("cmake ..")
     self.run("cmake --build . --config %s" % self.options.build_type)
 
