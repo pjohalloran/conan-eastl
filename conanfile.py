@@ -3,7 +3,7 @@ import os
 
 class EASTLConan(ConanFile):
   name = "EASTL"
-  version = "3.05.06"
+  version = "3.05.07"
   description = "EASTL stands for Electronic Arts Standard Template Library. It is an extensive and robust implementation that has an emphasis on high performance."
   license="Modified BSD License (3-Clause BSD license)"
   settings = "os", "compiler", "build_type", "arch"
